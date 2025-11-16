@@ -50,11 +50,12 @@
 
    ​	•**本地仓库创建**: 进入想推送的仓库的文件夹中，或者创建一个新的文件夹。
 
-2. **添加文件到暂存区**: 初始化版本库，添加指定文件到版本库中（暂存区）或添加所有文件到版本库中。具体命令如下：
+2. **添加文件到暂存区**: 初始化版本库，添加指定文件到版本库中（**暂存区**）或添加所有文件到版本库中。具体命令如下：
 
    ```
-   1. git init              (初始化版本库)   
-   2. git add 文件名         (如果要推送单个文件，示例: git add test.py， 推送所有文件，示例: git add . )
+   1. git init                    (初始化版本库)   
+   2. git add <file_name>         (如果要上传单个文件，示例: git add test.py， 推送所有文件，示例: git add . )
+   3. git add <dir_name>          (如果要上传一个文件夹)  
    ```
 
 3. **提交变更**: 使用 `git commit`命令，创建一个“存档点”。
@@ -70,6 +71,17 @@
    git push -u origin main                                (首次推送需要)
    git push                                               (后续不切换库可以直接push,git会自动推向origin/main)
    ```
+
+ 5. 从远程仓库拉取代码：可以使用pull命令：
+
+    ```
+    git fetch <remote_repo> <branch>                       (从远程仓库拉取最新代码到本地，但不合并代码)
+    git merge <branch>                                     (拉取并合并代码)
+    git pull --rebase                                      (多人开发会用到，使得本地代码永远处于最新状态)
+    git pull <remote_repo> <branch>                        (从远程仓库拉取代码，默认为origin，默认为当前分支)       
+    ```
+
+    
 
  **其他命令：**
 
